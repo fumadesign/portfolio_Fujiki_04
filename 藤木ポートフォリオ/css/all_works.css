@@ -1,0 +1,585 @@
+@charset "utf-8";
+/* ↓全ページ共通 */
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Altivo','Plus Jakarta Sans','Space Grotesk','Inter','Zen Kaku Gothic New', sans-serif;
+    background-color: #FFFEFB;
+    color:#3a3a3a;
+}
+
+img {
+    width: auto;
+}
+
+/* リンクボタン */
+.PC_btn {
+    background-color: #fff;
+    display: flex;
+    width: 336px;
+    height: 56px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 160px;
+    border: .5px solid #3a3a3a;
+}
+
+.PC_btn_contact_center{
+    display: flex;
+    justify-content: center;
+    margin: 160px auto 200px;
+}
+
+
+/* ヘッダーセクション */
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.74%;
+    width: 100%;
+    top: 30px;
+    z-index: 99998;
+    background-color: #fff;
+}
+
+.header-nav ul {
+    display: flex;
+    gap: 26px;
+}
+
+.logo {
+    width: 160px;
+}
+/* ナビリストの基本設定 */
+.header-nav ul li a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: #3a3a3a; /* 元の文字色 */
+  transition: color 0.3s;
+}
+
+/* 1. 通常時は元のテキストを表示し、ホバー時は元のテキストを透明にする */
+.header-nav ul li a:hover {
+    color: transparent; 
+}
+
+/* 2. 擬似要素で日本語の文字をあらかじめ重ねておく（通常時は非表示） */
+.header-nav ul li a::before {
+  content: var(--japan-text); 
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #3a3a3a; /* 日本語になった時の文字色 */
+    opacity: 0;  /* 通常時は見えないようにする */
+    transition: opacity 0.3s;
+    pointer-events: none; /* マウス反応を邪魔しない */
+    white-space: nowrap; 
+}
+
+/* 3. 擬似要素でマーカー線を作っておく（通常時は横幅0） */
+.header-nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px; /* 文字の下からの距離 */
+    left: 0;
+    width: 0;     /* 通常時は線を表示しない */
+    height: 4px;  /* マーカー線の太さ */
+    transition: width 0.3s;
+}
+
+.header-nav ul li:first-child a::after {
+  background-color: #F8AECE; 
+}
+.header-nav ul li:nth-child(2) a::after {
+  background-color:#FCC2A2; 
+}
+.header-nav ul li:nth-child(3) a::after {
+  background-color:#FFF9B3;
+}
+.header-nav ul li:nth-child(4) a::after {
+  background-color:#D3EBA4; 
+}
+.header-nav ul li:nth-child(5) a::after {
+  background-color:#A9CDF2;
+}
+.header-nav ul li:nth-child(6) a::after {
+  background:linear-gradient(90deg,rgba(248, 174, 206, .4) 0%, rgba(252, 200, 171, .4) 25%, rgba(255, 249, 179, .4) 50%, rgba(211, 235, 164, .4) 75%, rgba(169, 205, 242, .4) 100%);
+}
+/* --- ホバー（マウスが乗った時）の動き --- */
+
+/* 「ホーム」の文字を表示する */
+.header-nav ul li a:hover::before {
+    opacity: 1;
+}
+
+/* 赤いマーカー線を左から右へシャッと伸ばす */
+.header-nav ul li a:hover::after {
+    width: 100%;
+}
+
+.header-nav ul li:nth-child(1) a { --japan-text: "ホーム"; }
+.header-nav ul li:nth-child(2) a { --japan-text: "コンセプト"; }
+.header-nav ul li:nth-child(3) a { --japan-text: "私について"; }
+.header-nav ul li:nth-child(4) a { --japan-text: "制作実績"; }
+.header-nav ul li:nth-child(5) a { --japan-text: "制作までの流れ"; }
+.header-nav ul li:nth-child(6) a { --japan-text: "お問い合わせ"; }
+
+/* PC版ではハンバーガー、SP版navを非表示にする */
+.hamburger,
+.header-nav-sp {
+    display: none;
+}
+/* 1100pxを下回るとハンバーガーが出るように切り替わる */
+@media screen and (max-width: 1100px){
+    .header-nav{
+        display: none;
+    }
+    .hamburger{
+        display: block;
+        width: 54px;
+        height: 54px;
+        position: absolute;
+        right: 20px;
+        cursor: pointer;
+        z-index: 99999;
+    }
+
+    .hamburger span{
+        position: absolute;
+        width: 40px;
+        height: 2px;
+        background-color: #fff;
+        top: 50%;
+        left: 7px;
+        transition: 0.3s;
+    }
+
+    /* 疑似要素 */
+    .hamburger::before{
+        position: absolute;
+        content:"";
+        width: 40px;
+        height: 2px;
+        background-color: #3a3a3a;
+        top: 14px;
+        left: 7px;
+        transition: 0.3s;
+    }
+
+    .hamburger::after{
+        position: absolute;
+        content:"";
+        width: 40px;
+        height: 2px;
+        background-color: #3a3a3a;
+        bottom: 14px;
+        left: 7px;
+        transition: 0.3s;
+    }
+
+    /* openついたときの実装 */
+/* .open span { 
+    background-color: transparent;
+}*/
+
+.open::before {
+    transform: rotate(45deg);
+    top: 27px;
+}
+.open::after {
+    transform: rotate(-45deg);
+    top: 27px;
+    bottom: auto;
+}
+.header-nav-sp {
+    width: 100%;
+    height: 100vh;
+    background-color:#FFFEFB;
+    position: absolute;
+    top: -30px;
+    left: 0px;
+    z-index: 99999;
+}
+
+
+.header-nav-sp li{
+    font-size: 22px;
+    color: #3a3a3a;
+    
+}
+
+.header-nav-sp ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.nav_sp_li{
+    width: 324px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #D9D9D9;
+    padding: 16px;
+}
+}
+
+/* PC版飛び先ページ見出し*/
+.head-container {
+    display:block;
+    width: 100%;
+    height: 272px;
+    border-radius: 0px 0px 160px 0px;
+    background-color: #f9f9f9;
+    padding-top: 84px;
+    padding-bottom: 84px;
+    padding-left:160px;
+}
+
+.head-container h2 {
+    background-image: url(../images/heading_rainbow_img.png);
+    background-repeat: no-repeat;
+    padding: 20px 0px 30px 40px;
+}
+
+.head-title .en {
+font-size: 16px;
+margin-bottom: 16px;
+}
+
+.head-title .ja {
+font-size: 32px;
+font-weight: 600;
+}
+
+/* フッターセクション */
+#footer {
+  width: 90%;
+  margin-left: 0;
+  padding: 80px 160px 40px 80px;
+  border-radius: 0px 0px 160px 0px;
+  background-color: #f9f9f9;
+  position: relative;
+}
+.footer_inner {
+  display: flex;
+  justify-content: space-between;
+}
+.footer-logo {
+  width: 160px;
+}
+
+.footer_main {
+  text-align: right;
+}
+
+.footer-nav {
+  margin-bottom: 80px;
+}
+
+.footer-nav ul {
+  display: flex;
+  gap: 26px;
+}
+
+.to_Top_btn {
+  position: absolute;
+  right: 0;
+  top: 30%;
+}
+
+/* 1100~768pxまでの間 */
+@media screen and (min-width: 769px) and (max-width: 1100px) {
+/* フッターセクション */
+#footer{
+    width:100%;
+    padding: 48px 10% 87px;
+    background-color: #F9F9F9;
+    position: relative;
+    border-radius:0px;
+}
+.footer_inner{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo{
+    width: 160px;
+    margin:0 auto 72px;
+    align-items: center;
+}
+
+.footer_main{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.footer-nav{
+    padding-top: 40px;
+    margin-bottom:40px;
+    border-top:1px solid #D9D9D9;
+}
+
+.footer_main>p{
+    text-align: center;
+}
+
+.footer-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    font-size:22px;
+}
+
+.to_Top_btn{
+    position: absolute;
+    right: 80px;
+    top: 35%;
+}
+}
+
+/* ↑全ページ共通 */
+
+/* all_worksセクション */
+.all_works ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 160px;
+    margin-bottom: 200px;
+}
+
+.all_works_h3{
+    font-size: 16px;
+    text-align: center;
+    margin: 80px 0 40px 0;
+}
+
+.all_works h4 {
+    font-size: 16px;
+    margin-top: 22px;
+    margin-bottom: 8px;
+}
+
+.banner{
+    width: 240px;
+    margin-left: 32px;
+}
+
+.works__item{
+    min-width: 480px;
+    border-radius: 16pt;
+}
+
+.banner_icecream,.banner_dxburger,.website_portfolio,.website_lifehair,.website_designcafe,.website_workers{
+    min-width: 480px;
+    display: flex;
+    justify-content: center;
+    padding: 60px 0;
+    border-radius: 16pt;
+}
+.banner_icecream{
+    background-color: #EBF4FF;
+}
+
+.banner_dxburger{
+    background-color: #EFD7CB;
+}
+
+.website_portfolio{
+    background:linear-gradient(90deg,rgba(248, 174, 206, .4) 0%, rgba(252, 200, 171, .4) 25%, rgba(255, 249, 179, .4) 50%, rgba(211, 235, 164, .4) 75%, rgba(169, 205, 242, .4) 100%);
+}
+
+.website_lifehair{
+    background-color: #F5CCCF;
+}
+
+.website_designcafe{
+    background-color: #FEF7EC;
+}
+
+.website_workers{
+    background-color: #FFEDA6;
+}
+
+.works_name{
+    display: flex;
+    margin-top:8px;
+}
+
+.works__item img{
+    min-width: 0; /*これでスマホ版も伸び縮みする!!*/
+}
+
+/* 768px以下の画面幅レスポンシブ対応 */
+/* ↓全ページ共通 */
+@media screen and (max-width: 768px){
+.logo {
+    width: 120px;
+}
+
+/* 飛び先ページ見出し */
+.head-container {
+    display:block;
+    width: 100%;
+    height: 168px;
+    border-radius: 0px 0px 100px 0px;
+    background-color: #f9f9f9;
+    padding-top: 45px;
+    padding-bottom: 63px;
+    padding-left:32px;
+}
+
+.head-container h2 {
+    background-image: url(../images/heading_rainbow_img_SP.png);
+    background-repeat: no-repeat;
+    /* width: 70%; */
+    padding: 0px 0px 30px 40px;
+}
+
+.head-title .en {
+font-size: 16px;
+margin-bottom: 16px;
+}
+
+.head-title .ja {
+        font-size: clamp(20px, 6vw, 24px);
+font-weight: 600;
+white-space: nowrap;
+}
+
+/* フッターセクション */
+#footer{
+    width:100%;
+    padding: 48px 10% 87px;
+    background-color: #F9F9F9;
+    position: relative;
+    border-radius:0px;
+}
+.footer_inner{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo{
+    width: 120px;
+    margin:0 auto 72px;
+    align-items: center;
+}
+
+.footer_main{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.footer-nav{
+    padding-top: 40px;
+    margin-bottom:40px;
+    border-top:1px solid #D9D9D9;
+}
+
+.footer_main>p{
+    text-align: center;
+}
+
+.footer-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    font-size:22px;
+}
+
+.to_Top_btn{
+    position: absolute;
+    right: 10%;
+    top: 35%;
+}
+
+.to_Top_btn img{
+    width: 56px;
+}
+
+/* 制作実績一覧 */
+.all_works{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.all_works_h3{
+    font-size: 12px;
+}
+
+.all_works h4 {
+    font-size: 16px;
+    margin-top: 22px;
+    margin-bottom: 8px;
+}
+
+.all_works ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 104px;
+}
+
+.all_works {
+    padding-left: 10%; /* 画面左右に10%の余白をキープ */
+    padding-right: 10%;
+}
+
+.works_list {
+    width: 100%; /* 1カラムにする */
+    min-width: 0; /* 480px以下でも縮むようにリセット */
+    height: auto; /* 横幅の縮みに合わせて、枠の高さも可変にする */
+    padding: 40px 20px; /* スマホ版のとき、枠内の上下左右に作る最小限の余白 */
+}
+
+.works__item a {
+    display: block;
+    width: 100%; 
+    margin: 0 auto;
+    }
+
+.banner_icecream,.banner_dxburger,.website_portfolio,.website_lifehair,.website_designcafe,.website_workers{
+    width: 100%;
+    min-width:0;
+    height: auto;   
+    display: flex;
+    justify-content: center;
+    padding: 60px 0;
+    border-radius: 16pt;
+}
+
+.works__item{
+    width: 100%;
+    min-width: 0;
+    padding-bottom: 60px;
+    border-radius: 16pt;
+}
+
+ /* 💡 すべての塗り枠の「高さ固定」を解除し、上下左右に余白を作る */
+.banner_icecream,.banner_dxburger,.website_portfolio,.website_lifehair,.website_designcafe,.website_workers {
+    padding: 40px 20px; /* 画像のまわりに必ず上下40px・左右20pxの余白をキープ */
+}
+
+
+}
+
+
+
+
+
+
+
+

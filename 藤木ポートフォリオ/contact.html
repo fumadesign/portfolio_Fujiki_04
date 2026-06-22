@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fuma design Portfolio</title>
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <!--GoogleFonts読み込み-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@300..700&family=Zen+Kaku+Gothic+New&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/contact.css">
+    <link rel="icon" href="./images/favicon_02.svg" type="image/svg+xml">
+</head>
+
+
+<body>
+    <!-- ヘッダー部分 -->
+    <header id="header">
+        <h1 class="logo">
+            <a href="./index.html">
+                <img src="./images/logo_icon.svg" alt="fuma design logo" />
+            </a>
+        </h1>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="concept.html">CONCEPT</a></li>
+                <li><a href="about_me.html">ABOUT ME</a></li>
+                <li><a href="all_works.html">WORKS</a></li>
+                <li><a href="#WORK_FLOW">WORK FLOW</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <!-- コーディング5回目で ハンバーガー追記 -->
+        <div class="hamburger">
+            <span></span>
+        </div>
+
+        <!-- sp版ハンバーガー押したときにでるli -->
+        <nav class="header-nav-sp">
+            <ul>
+                <a href="index.html">
+                    <div class="nav_sp_li">
+                        <li>HOME</li>
+                        <img src="./images/hamburger_li_pink.png" alt="HOMEに飛ぶアイコン">
+                    </div>
+                </a>
+                <a href="concept.html">
+                    <div class="nav_sp_li">
+                        <li>CONCEPT</li>
+                        <img src="./images/hamburger_li_orange.png" alt="CONCEPTに飛ぶアイコン">
+                    </div>
+                </a>
+                <a href="about_me.html">
+                    <div class="nav_sp_li">
+                        <li>ABOUT ME</li>
+                        <img src="./images/hamburger_li_yellow.png" alt="ABOUT MEに飛ぶアイコン">
+                    </div>
+                </a>
+                <a href="all_works.html">
+                    <div class="nav_sp_li">
+                        <li>WORKS</li>
+                        <img src="./images/hamburger_li_green.png" alt="WORKSに飛ぶアイコン">
+                    </div>
+                </a>
+                <a href="#WORK_FLOW">
+                    <div class="nav_sp_li">
+                        <li>WORK FLOW</li>
+                        <img src="./images/hamburger_li_blue.png" alt="WORK FLOWに飛ぶアイコン">
+                    </div>
+                </a>
+                <a href="contact.html">
+                    <div class="nav_sp_li">
+                        <li>CONTACT</li>
+                        <img src="./images/hamburger_li_rainbow.png" alt="CONTACTに飛ぶアイコン">
+                    </div>
+                </a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- 全ページ共通見出しセクション -->
+        <section class="head">
+            <div class="head-container">
+                <h2 class="head-title">
+                    <div class="en">CONTACT</div>
+                    <div class="ja"> お問い合わせはこちらから。</div>
+                </h2>
+            </div>
+        </section>
+
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="redirectToThanks()"></iframe>
+        <section class="contact_form">
+
+            <p>
+                WEB制作、バナー制作などのご依頼、<br>
+                外部パートナーとして業務委託など承っております。<br>
+                どんな小さなことでもけっこうです。<br>
+                ご相談は以下のフォームからお送りください。
+            </p>
+
+            <form
+                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdLePrIBzXU5JbsBwzNGz2Bdhxi6LG5f37WIcCJhVoJs6Uv-g/formResponse"
+                class="c-form" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+
+                <div class="c-form__item">
+                    <label class="c-form__label" for="field-name">お名前</label>
+                    <input name="entry.2073678484" class="c-form__input" id="field-name" placeholder="田中　太郎" type="text"
+                        required="required" />
+                </div>
+                <div class="c-form__item">
+                    <label class="c-form__label" for="field-mail">フリガナ</label>
+                    <input name="entry.965266026" class="c-form__input" id="field-mail" placeholder="タナカ　タロウ"
+                        type="text" required="required" />
+                </div>
+                <div class="c-form__item">
+                    <label class="c-form__label" for="field-mail">メールアドレス</label>
+                    <input name="entry.1402230953" class="c-form__input" id="field-mail"
+                        placeholder="tanakatarou@gmail.com" type="text" required="required" />
+                </div>
+                <div class="c-form__item">
+                    <label class="c-form__label" for="field-category">ご相談カテゴリ</label>
+                    <!-- input から select に変更 -->
+                    <select name="entry.1511403208" class="c-form__input" id="field-category" required="required">
+                        <option value="" disabled selected>選択してください</option>
+                        <option value="バナー広告制作">バナー広告制作</option>
+                        <option value="LP（ランディングページ）制作">LP（ランディングページ）制作</option>
+                        <option value="業務委託のご相談">業務委託のご相談</option>
+                        <option value="その他">その他</option>
+                    </select>
+                </div>
+                <div class="c-form__item">
+                    <label name="entry.2143330440" class="c-form__label"
+                        for="field-consultation_content">ご相談・ご依頼内容</label>
+                    <textarea class="c-form__input" id="field-consultation_content" placeholder="お仕事の概要、ご相談内容等ご記入お願いいたします。
+●制作物
+●スケジュール感
+●ご予算
+etc..."></textarea>
+                </div>
+
+                <div class="c-form__submit">
+                    <button type="submit">送信する</button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <!--フッター部分-->
+    <footer id="footer">
+        <div class="footer_inner">
+            <h5 class="footer-logo">
+                <a href="./index.html">
+                    <img src="./images/logo_icon.svg" alt="fuma design logo">
+                </a>
+            </h5>
+            <div class="footer_main">
+                <nav class="footer-nav">
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="concept.html">CONCEPT</a></li>
+                        <li><a href="about_me.html">ABOUT ME</a></li>
+                        <li><a href="all_works.html">WORKS</a></li>
+                        <li><a href="#WORK_FLOW">WORK FLOW</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </nav>
+                <p><small>&copy; 2026 fuma design</small></p>
+            </div>
+        </div>
+        <div class="to_Top_btn">
+            <a href="#header">
+                <img src="./images/PC_toTOP_btn.png" alt="トップへ戻るボタン" /></a>
+        </div>
+        <!-- SP版でのみ表示するフッター 
+        <section class="footer_SP">
+            <div class="footer_inner">
+                <h5 class="footer-logo">
+                    <a href="./index.html">
+                        <img src="./images/logo_icon.svg" alt="fuma design logo">
+                    </a>
+                </h5>
+                <div class="footer_main">
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><a href="index.html">HOME</a></li>
+                            <li><a href="concept.html">CONCEPT</a></li>
+                            <li><a href="about_me.html">ABOUT ME</a></li>
+                            <li><a href="all_works.html">WORKS</a></li>
+                            <li><a href="#WORK_FLOW">WORK FLOW</a></li>
+                            <li><a href="contact.html">CONTACT</a></li>
+                        </ul>
+                    </nav>
+                    <p><small>&copy; 2026 fuma design</small></p>
+                </div>
+                <div class="to_Top_btn">
+                    <a href="#header">
+                        <img src="./images/PC_toTOP_btn.png" alt="トップへ戻るボタン" /></a>
+                </div>
+            </div>
+        </section>-->
+    </footer>
+    <!-- 4/11講義5でjQueryを追記。SP版ハンバーガークリックでnav liが開いて閉じる設定に。-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        $(function () {
+            $(".hamburger").on("click", function () {
+                $(".hamburger").toggleClass("open");
+                $(".header-nav-sp").fadeToggle();
+            });
+        })
+    </script>
+
+    <script>
+        let submitted = false;
+        function redirectToThanks() {
+            if (submitted) {
+                window.location = 'thanks.html'; // 👈 遷移させたいサンクスページのパス
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fuma design Portfolio</title>
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <!--GoogleFonts読み込み-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@300..700&family=Zen+Kaku+Gothic+New&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/contact.css">
+    <link rel="icon" href="./images/favicon_02.svg" type="image/svg+xml">
+</head>
+
+<body>
+    <!-- ヘッダー部分 -->
+    <header id="header">
+        <h1 class="logo">
+            <a href="./index.html">
+                <img src="./images/logo_icon.svg" alt="fuma design logo" />
+            </a>
+        </h1>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="concept.html">CONCEPT</a></li>
+                <li><a href="about_me.html">ABOUT ME</a></li>
+                <li><a href="all_works.html">WORKS</a></li>
+                <li><a href="#WORK_FLOW">WORK FLOW</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <!-- コーディング5回目で ハンバーガー追記 -->
+        <div class="hamburger">
+            <span></span>
+        </div>
+
+        <!-- sp版ハンバーガー押したときにでるli -->
+        <nav class="header-nav-sp">
+            <ul>
+                <a href="index.html">
+                    <div class="nav_sp_li">
+                        <li>HOME</li>
+                        <img src="./images/hamburger_li_pink.png" alt="HOMEに飛ぶアイコン">
+                    </div>
+                </a>
+                <a href="concept.html">
+                    <div class="nav_sp_li">
+                        <li>CONCEPT</li>
+                        <img src="./images/hamburger_li_orange.png" alt="CONCEPTに飛ぶアイコン">
+                    </div>
+                </a>
+                <a href="about_me.html">
+                    <div class="nav_sp_li">
+                        <li>ABOUT ME</li>
+                        <img src="./images/hamburger_li_yellow.png" alt="ABOUT MEに飛ぶアイコン">
+                    </div>
+                </a>
+                <a href="all_works.html">
+                    <div class="nav_sp_li">
+                        <li>WORKS</li>
+                        <img src="./images/hamburger_li_green.png" alt="WORKSに飛ぶアイコン">
+                    </div>
+                </a>
+                <a href="#WORK_FLOW">
+                    <div class="nav_sp_li">
+                        <li>WORK FLOW</li>
+                        <img src="./images/hamburger_li_blue.png" alt="WORK FLOWに飛ぶアイコン">
+                    </div>
+                </a>
+                <a href="contact.html">
+                    <div class="nav_sp_li">
+                        <li>CONTACT</li>
+                        <img src="./images/hamburger_li_rainbow.png" alt="CONTACTに飛ぶアイコン">
+                    </div>
+                </a>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 全ページ共通見出しセクション -->
+    <secion class="head">
+        <div class="head-container">
+            <h2 class="head-title">
+                <div class="en">Thank you!!</div>
+                <div class="ja"> お問い合わせありがとうございました!!</div>
+            </h2>
+        </div>
+    </secion>
+
+    <main>
+        <section class="thanks_page">
+            <p>お問い合わせありがとうございました。<br>
+                確認の上、24時間以内にお返事いたします。<br>今しばらくお待ちくださいませ。</p>
+            <div class="PC_btn_contact_center">
+                <a href="index.html" class="PC_btn">トップページへ戻る</a>
+            </div>
+        </section>
+    </main>
+
+    <!--フッター部分-->
+    <footer id="footer">
+        <div class="footer_inner">
+            <h5 class="footer-logo">
+                <a href="./index.html">
+                    <img src="./images/logo_icon.svg" alt="fuma design logo">
+                </a>
+            </h5>
+            <div class="footer_main">
+                <nav class="footer-nav">
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="concept.html">CONCEPT</a></li>
+                        <li><a href="about_me.html">ABOUT ME</a></li>
+                        <li><a href="all_works.html">WORKS</a></li>
+                        <li><a href="#WORK_FLOW">WORK FLOW</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </nav>
+                <p><small>&copy; 2026 fuma design</small></p>
+            </div>
+        </div>
+        <div class="to_Top_btn">
+            <a href="#header">
+                <img src="./images/PC_toTOP_btn.png" alt="トップへ戻るボタン" /></a>
+        </div>
+    </footer>
+    <!-- 4/11講義5でjQueryを追記。SP版ハンバーガークリックでnav liが開いて閉じる設定に。-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        $(function () {
+            $(".hamburger").on("click", function () {
+                $(".hamburger").toggleClass("open");
+                $(".header-nav-sp").fadeToggle();
+            });
+        })
+    </script>
+
+
+</body>

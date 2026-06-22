@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fuma design Portfolio</title>
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <!--GoogleFonts読み込み-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Grotesk:wght@300..700&family=Zen+Kaku+Gothic+New&display=swap"
+        rel="stylesheet" />
+    <!--css読み込み-->
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="./css/modaal.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/lib/modaal.min.css">
+    <link rel="stylesheet" href="./css/concept.css">
+    <link rel="icon" href="./images/favicon_02.svg" type="image/svg+xml">
+</head>
+
+<body>
+    <!-- ヘッダー部分 -->
+    <header id="header">
+        <h1 class="logo">
+            <a href="./index.html">
+                <img src="./images/logo_icon.svg" alt="fuma design logo" />
+            </a>
+        </h1>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="concept.html">CONCEPT</a></li>
+                <li><a href="about_me.html">ABOUT ME</a></li>
+                <li><a href="all_works.html">WORKS</a></li>
+                <li><a href="#WORK_FLOW">WORK FLOW</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <!-- コーディング5回目で ハンバーガー追記 -->
+        <div class="hamburger">
+            <span></span>
+        </div>
+
+        <!-- sp版ハンバーガー押したときにでるli -->
+        <nav class="header-nav-sp">
+            <ul>
+                <a href="index.html">
+                    <div class="nav_sp_li">
+                        <li>HOME</li>
+                        <img src="./images/hamburger_li_pink.png" alt="HOMEに飛ぶアイコン">
+                    </div>
+                </a>
+                <a href="concept.html">
+                    <div class="nav_sp_li">
+                        <li>CONCEPT</li>
+                        <img src="./images/hamburger_li_orange.png" alt="CONCEPTに飛ぶアイコン">
+                    </div>
+                </a>
+                <a href="about_me.html">
+                    <div class="nav_sp_li">
+                        <li>ABOUT ME</li>
+                        <img src="./images/hamburger_li_yellow.png" alt="ABOUT MEに飛ぶアイコン">
+                    </div>
+                </a>
+                <a href="all_works.html">
+                    <div class="nav_sp_li">
+                        <li>WORKS</li>
+                        <img src="./images/hamburger_li_green.png" alt="WORKSに飛ぶアイコン">
+                    </div>
+                </a>
+                <a href="#WORK_FLOW">
+                    <div class="nav_sp_li">
+                        <li>WORK FLOW</li>
+                        <img src="./images/hamburger_li_blue.png" alt="WORK FLOWに飛ぶアイコン">
+                    </div>
+                </a>
+                <a href="contact.html">
+                    <div class="nav_sp_li">
+                        <li>CONTACT</li>
+                        <img src="./images/hamburger_li_rainbow.png" alt="CONTACTに飛ぶアイコン">
+                    </div>
+                </a>
+            </ul>
+        </nav>
+    </header>
+    <!-- 全ページ共通見出しセクション -->
+    <section class="head">
+        <div class="head-container">
+            <h2 class="head-title">
+                <div class="en">CONCEPT</div>
+                <div class="ja"><span class="ja_head">fuma design</span>の想い</div>
+            </h2>
+        </div>
+    </section>
+
+    <!-- コンセプト説明 -->
+    <main>
+        <section class="concept_msg">
+            <div class="concept_contents">
+                <div class="concept_snail">
+                    <h3>かたつむり</h3>
+                    <picture>
+                        <source srcset="./images/gray_snail_M.svg" media="(max-width:768px)" />
+                        <img src="./images/gray_snail.svg" alt="グレーのかたつむり">
+                    </picture>
+                </div>
+                <p>かたつむりは、自分の大切な居場所（殻）を背負って進みます。私も同じように、<span
+                        class="rainbow">クライアントさまの想いを背負い、一歩一歩を大切に刻むデザイナーでありたいと考えています。</span>近道を探すのではなく、目的地まで最も確実に、最も丁寧に。信頼を形にするための歩みを止めません。
+                </p>
+            </div>
+            <div class="cross-icon"></div>
+            <div class="concept_contents">
+                <div class="concept_rainbow">
+                    <h3>虹</h3>
+                    <picture>
+                        <source srcset="./images/rainbow_img_SP.png" media="(max-width:768px)" />
+                        <img src="./images/rainbow_img.png" alt="レインボーのドット">
+                    </picture>
+                </div>
+                <p>赤には<span class="red">「情熱的、アクティブ、暑そう」</span>、緑には<span class="green">「自然でエコ、安心感がある」</span>、青には<span
+                        class="blue">「信頼できる、真面目で静か」</span>など…全ての色に連想されるイメージがあります。fuma
+                    designでは色彩の持つパワーとエネルギーに確かな意味を持たせ、想いを乗せてデザインすることを大切にしています。</p>
+            </div>
+        </section>
+        </div>
+
+        <div class="scroll_icon">
+            <img src="./images/heading_rainbow_img.png" alt="縦長レインボードット">
+            <p>Scroll</p>
+        </div>
+
+        <!-- ロゴ作成、キーワードFigjam  -->
+        <section class="making_logo">
+            <h4>手描きラフを基に【かたつむり×虹】をモチーフにオリジナルロゴを作成。</h4>
+            <div class="making_logo_inner">
+                <img src="./images/logo_rough.png" alt="fuma designロゴの手描きラフ画像">
+                <picture>
+                    <source srcset="./images/arrows_to_bottom.png" media="(max-width:768px)" />
+                    <img src="./images/arrows_to_right.png" alt="矢印">
+                </picture>
+                <img class="logo" src="./images/logo_icon.svg" alt="完成したfuma designのロゴ">
+            </div>
+        </section>
+
+        <section class="concept_branch">
+            <h4>コンセプトと世界観を基にキーワードを抽出、考えを広げていきます。</h4>
+            <div class="concept_branch_container">
+                <a href="./images/concept_figjam_scaleup.png" class="image-modal">
+                    <img src="./images/concept_figjam.png" alt="ポートフォリオサイトのコンセプト設計におけるFigJamでのアイデア出しの様子"
+                        class="portfolio_figjam">
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!--フッター部分-->
+    <footer id="footer">
+        <div class="footer_inner">
+            <h5 class="footer-logo">
+                <a href="./index.html">
+                    <img src="./images/logo_icon.svg" alt="fuma design logo">
+                </a>
+            </h5>
+            <div class="footer_main">
+                <nav class="footer-nav">
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="concept.html">CONCEPT</a></li>
+                        <li><a href="about_me.html">ABOUT ME</a></li>
+                        <li><a href="all_works.html">WORKS</a></li>
+                        <li><a href="#WORK_FLOW">WORK FLOW</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </nav>
+                <p><small>&copy; 2026 fuma design</small></p>
+            </div>
+        </div>
+        <div class="to_Top_btn">
+            <a href="#header">
+                <img src="./images/PC_toTOP_btn.png" alt="トップへ戻るボタン" /></a>
+        </div>
+
+    </footer>
+    <!-- 4/11講義5でjQueryを追記。SP版ハンバーガークリックでnav liが開いて閉じる設定に。-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="/js/modaal.min.js"></script>
+    <script src="../js/lib/jquery-3.6.0.min.js"></script>
+    <script src="../js/lib/modaal.min.js"></script>
+    <script src="../js/common.js"></script>
+
+    <script>
+        $(function () {
+            $(".hamburger").on("click", function () {
+                $(".hamburger").toggleClass("open");
+                $(".header-nav-sp").fadeToggle();
+            });
+        })
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('.image-modal').modaal({
+                type: 'image', // 🖼️ 画像表示モードを指定
+                overlay_close: true, accessible_title: '拡大画像',
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
