@@ -424,10 +424,14 @@ h4{
 
 .career_inner{
     display: flex;
+    justify-content: space-between;
 }
 
 .my_career{
-    padding-right: 80px;
+    /* padding-right: 80px; */
+    max-width: 560px;
+    width: 50%;
+
 }
 .career_detail p{
     font-size: 16px;
@@ -446,34 +450,45 @@ h4{
     background-image: url(../images/pink_head.svg);
     background-repeat: no-repeat;
     padding: 30px 0px 30px 80px;
+    background-size: 100px;
 }
 .flow02 {
     background-image: url(../images/orange_head.svg);
     background-repeat: no-repeat;
     padding: 30px 0px 30px 80px;
+    background-size: 100px;
 }
+
 .flow03 {
     background-image: url(../images/yellow_head.svg);
     background-repeat: no-repeat;
     padding: 30px 0px 30px 80px;
+    background-size: 100px;
 }
 .flow04 {
     background-image: url(../images/green_head.svg);
     background-repeat: no-repeat;
     padding: 30px 0px 30px 80px;
+    background-size: 100px;
 }
 .flow05 {
     background-image: url(../images/blue_head.svg);
     background-repeat: no-repeat;
     padding: 30px 0px 30px 80px;
+    background-size: 100px;
 }
 .flow06 {
     background-image: url(../images/pink_head.svg);
     background-repeat: no-repeat;
     padding: 30px 0px 30px 80px;
+    background-size: 100px;
 }
 
 /* 右側写真部分 */
+.work_flow_imgs{
+    width: 50%;
+}
+
 .work_flow_imgs p{
     font-size: 16px;
     width: 256px;
@@ -486,21 +501,26 @@ h4{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 40px;
 }
 
 .work_flow_imgs_inner picture{
     width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
 }
 
 .work_flow_imgs_inner picture img{
-    width: 80%;
+    width: 100%;
 }
 
 /* other_skillsセクション */
 .other_skills{
-    width: 80%;
+    /* width: 80%; */
+    max-width: 1120px;
     display: block;
     margin: 0 auto;
+    padding: 0 5%;
 }
 
 .other_skills_inner{
@@ -512,11 +532,28 @@ h4{
 }
 
 .other_skills_detail{
-    width: 80%;
+    width: 28.6%;
     background-color: #fff;
     border: solid 1px #3a3a3a;
     border-radius: 16pt;
     padding: 40px 32px;
+}
+
+.skills_list_others ul li:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+
+@media screen and (max-width: 1080px){
+    .other_skills_detail{
+        width: 40%;
+    }
+
+    .other_skills_inner{
+        column-gap: 5%;
+        row-gap: 80px;
+        justify-content: center;
+    }
 }
 
 .other_skills img {
@@ -564,7 +601,7 @@ h4{
 }
 
 .skills_list_others{
-    margin-bottom: 132px;
+    margin-bottom: 110px;
 }
 
 /* 768px以下の画面幅レスポンシブ対応 */
@@ -754,8 +791,11 @@ h4{
 }
 
 .my_career {
+    width: 100%;
+    max-width: 100%;
     padding-right: 0;
 }
+
 .career_detail{
     width: 100%;
     padding-right: 10%;
@@ -786,33 +826,51 @@ h4{
     padding-bottom: 80px;
     line-height: 2.0;
 }
+.flow01, .flow02, .flow03, .flow04, .flow05, .flow06 {
+    background-size: 80px;
+}
+.flow02 {
+    background-size: 80px;
+}
+
+.flow03 {
+    background-image: url(../images/yellow_head.svg);
+    background-repeat: no-repeat;
+    padding: 30px 0px 30px 80px;
+    background-size: 80px;
+}
+.flow04 {
+    background-image: url(../images/green_head.svg);
+    background-repeat: no-repeat;
+    padding: 30px 0px 30px 80px;
+    background-size: 80px;
+}
+.flow05 {
+    background-image: url(../images/blue_head.svg);
+    background-repeat: no-repeat;
+    padding: 30px 0px 30px 80px;
+    background-size: 80px;
+}
+.flow06 {
+    background-image: url(../images/pink_head.svg);
+    background-repeat: no-repeat;
+    padding: 30px 0px 30px 80px;
+    background-size: 80px;
+}
+
 /* mainセクション その他スキル */
 .other_skills_inner{
     /* width: 320px; */
-    width: 80%;
+    /* width: 80%; */
     margin: 0 auto;
     flex-wrap: wrap;
+    gap: 40px;
     justify-content: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.other_skills_detail{
+    width: 100%;
+}
 
 
 }

@@ -82,7 +82,7 @@ img {
     .PC_btn_contact_center {
     display: flex;
     justify-content: center;
-    margin: 160px auto 200px;
+    margin: 246px auto 200px;
 }
 
 
@@ -430,16 +430,16 @@ font-weight: 600;
 .c-form__input {
 	padding: 10px;
     margin-bottom: 10px;
+    font-size: 16px;
+	border: solid 1px #3a3a3a;
+	border-radius: 8px;
+    line-height: 1.6;
 }
 .c-form__label {
 	width: 90%;
     margin-bottom:10px;
 }
-.c-form__input {
-	font-size: 16px;
-	border: solid 1px #3a3a3a;
-	border-radius: 8px;
-}
+
 .c-form__input:focus-visible {
 	outline: #3a3a3a auto 1px;
 }
@@ -526,15 +526,21 @@ textarea.c-form__input {
 
 /* thanksページ */
 .thanks_page{
+    max-width: 900px;
     background-image: url(../images/background_snail.svg);
     background-repeat: no-repeat;
-    margin-top: 160px;
+    /* margin-top: 160px; */
+    margin: 80px auto 0;
+    /* padding: 80px 0 160px; */
 }
 
 .thanks_page p{
     font-size: 20px;
     line-height: 2.0;
     width: 100%;
+    max-width: 420px;
+    margin-left: auto;
+    padding-top: 87px;
 }
 
 /* 768px以下の画面幅レスポンシブ対応 */
@@ -715,6 +721,7 @@ margin-bottom: 16px;
     display: flex;
     justify-content: center;
     margin: 80px auto 104px;
+    order: 3;
 }
 
 /* フッターセクション */
@@ -771,21 +778,42 @@ margin-bottom: 16px;
 
 /* 問い合わせフォームセクション */
 .contact_form{
-    margin-bottom:104px;
+    margin-bottom: 104px;
 }
 
 /* SP_thanksページ */
 .thanks_page{
-    background-image: url(../images/background_snail.svg);
-    background-repeat: no-repeat;
+    /* background-image: url(../images/background_snail.svg);
+    background-repeat: no-repeat; */
     margin-top:80px;
+    background: none;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 10%;
 }
 
+.thanks_page::before{
+    aspect-ratio: 320 / 140;
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-image: url(../images/background_snail.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    order: 2;
+}
+
+
 .thanks_page p{
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
     font-size: 16px;
-    line-height: 2.0;
-    margin-top: 80px;
-    padding-inline: 10%;
+    line-height: 2;
+    /* padding-inline: 10%; */
+    order: 1;
+    margin-bottom: 40px;
 }
 
 

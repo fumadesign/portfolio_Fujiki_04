@@ -531,14 +531,20 @@ img {
 .works_card_multi_images p,
 .works_card_single_image p {
   /* font-size: 20px; */
-  font-size: clamp(16px, 5.5vw, 20px);
+  font-size: clamp(14px, 1.3vw, 20px);
   margin-top: 24px;
   text-align: center;
   white-space: nowrap;
 }
-.slick-dots{
-  margin: -40px;
+.all_works{
+  position: relative;
+
+  .slick-dots{
+    position: absolute;
+  bottom: -50px;   
 }
+}
+
 
 #WORKS>.PC_btn_concept{
   margin-top: 120px;
@@ -1086,6 +1092,9 @@ body{
   background-image: url(../images/background_snail.svg);
   background-position: left 140px top 280px; 
   background-repeat: no-repeat;
+}
+#CONTACT h3{
+  padding: 0;
 }
 
 #CONTACT p {
