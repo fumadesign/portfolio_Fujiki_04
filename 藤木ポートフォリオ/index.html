@@ -23,6 +23,12 @@
 </head>
 
 <body>
+  <!-- ローディングアニメーション -->
+  <div id="loading-screen">
+    <!--playsinline, autoplay, muted は自動再生に必須の属性です -->
+    <video id="loading-video" src="loadinganimation.webm" autoplay muted playsinline></video>
+  </div>
+
   <!-- ヘッダー部分 -->
   <header id="header">
     <h1 class="logo">
@@ -87,8 +93,8 @@
       </ul>
     </nav>
   </header>
-
   <div>
+
     <!-- CONCEPTセクション -->
     <section id="CONCEPT">
       <div class="consept_sec">
@@ -391,6 +397,41 @@
   <script src="../js/lib/jquery-3.6.0.min.js"></script>
   <script src="../js/lib/modaal.min.js"></script>
   <script src="../js/common.js"></script>
+
+  <script>
+    const loadingScreen = document.getElementById('loading-screen');
+    const loadingVideo = document.getElementById('loading-video');
+    const mainContent = document.getElementById('main-content');
+
+    function switchToFV() {
+      loadingScreen.classList.add('fade-out');
+      mainContent.classList.add('is-show');
+      mainContent.classList.remove('is-hidden');
+    }
+    // 💡 過去にローディングを見たかチェック
+    if (sessionStorage.getItem('loadingViewed')) {
+      // すでに見たことがある場合は、動画を再生せずにすぐFVを表示
+      loadingScreen.style.display = 'none'; // ローディング画面を完全に消す
+      mainContent.classList.add('is-show');
+      mainContent.classList.remove('is-hidden');
+    } else {
+      // 初めて訪れた場合のみ、以下の通常処理を実行
+
+      // 💡 「一度見た」というフラグをブラウザに保存
+      sessionStorage.setItem('loadingViewed', 'true');
+
+
+      loadingVideo.addEventListener('ended', () => {
+        switchToFV();
+      });
+
+      setTimeout(() => {
+        if (!loadingScreen.classList.contains('fade-out')) {
+          switchToFV();
+        }
+      }, 7500);
+    }
+  </script>
 
   <script>
     $(function () {
