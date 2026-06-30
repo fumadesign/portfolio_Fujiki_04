@@ -581,14 +581,13 @@ img {
 }
 .all_works{
   position: relative;
+}
 
-  .slick-dots{
-    position: absolute;
+.slick-dots{
+  position: absolute;
   bottom: -50px;   
+  left: 0;
 }
-}
-
-
 #WORKS>.PC_btn_concept{
   margin-top: 120px;
 }
@@ -1005,6 +1004,7 @@ body{
   width: 100%;
   padding-left: 10%;
   padding-right: 10%;
+  order: 3;
 }
 
 .about_me__inner {
@@ -1018,17 +1018,20 @@ body{
   gap: 100px;
 }
 
-  .about__text-area {
+.about__text-area {
     width: 100%;
   }
-  .about_me_inner > picture {
-    width: 90%;
+.about_me_inner > picture {
+    width: 85%;
+      order: 2;
   }
-  .section-head {
+
+.section-head {
     padding-inline: 10%;
   }
 .profile_pic {
   border-radius: 16px;
+
 }
 
 .PC_btn_aboutme {
@@ -1036,6 +1039,11 @@ body{
   justify-content: center;
   margin: 48px auto 0px;
 }
+#ABOUT_ME h3{
+  order: 1;
+}
+
+
 /* SP_WORKSセクション */
 #WORKS {
   margin-top: 106px;
@@ -1125,6 +1133,7 @@ body{
 .work_flow_imgs_inner {
   margin-bottom: 40px;
 }
+
 
 /* SP_CONTACTセクション */
 #CONTACT {

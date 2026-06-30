@@ -349,13 +349,14 @@ font-weight: 600;
 
 .concept_snail, .concept_rainbow {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 48px;
     margin-bottom: 64px;
 }
 
 .concept_rainbow img{
-    width: 312px;
+    width: 100%;
 }
 
 .concept_msg {
@@ -434,6 +435,7 @@ font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 80px;
 }
 
 .scroll_icon p{
@@ -459,7 +461,7 @@ h4{
 }
 
 .making_logo .logo{
-    width: 612px;
+    width: 40%;
 }
 
 .making_logo_inner{
@@ -611,6 +613,7 @@ margin-bottom: 16px;
 .concept_rainbow{
     display: flex;
     flex-direction: column;
+    gap: 16px;
 }
 .concept_snail h3, .concept_rainbow h3{
     font-size: 26px;
@@ -643,6 +646,7 @@ h4{
     font-weight: 600;
     margin-bottom: 40px;
     padding-inline: 10%;
+    line-height: 2;
 }
 
 .making_logo, .concept_branch{
